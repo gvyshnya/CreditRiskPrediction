@@ -49,25 +49,26 @@ Several other models (SVM with radial kernel, CART, logistic regression) were al
 
 # Orchestration
 R was used as a programming language and environment to implement all of the routines needed. The overall setup of the data science experiment toward the submission for this problem was as follows
-1.	Read training and testing data set into R
-2.	Do pre-processing and feature engineering as explained in section “Data Exploration and Feature Engineering” above
-3.	Do data imputation
-4.	Do SMOTE over-sampling of training data
-5.	Generate clusters and split both the trainingand testing set over the clusters
-6.	Apply trained models to each of the clustered subsets
-7.	Generate prediction per each cluster subset and model pair
-8.	Combine predictions from various models into an ensemble
-9.	Combine ensemble predictions for each cluster into a single prediction set
-10.	Generate a submission file for Kaggle
+- Read training and testing data set into R
+- Do pre-processing and feature engineering as explained in section “Data Exploration and Feature Engineering” above
+- Do data imputation
+- Do SMOTE over-sampling of training data
+- Generate clusters and split both the trainingand testing set over the clusters
+- Apply trained models to each of the clustered subsets
+- Generate prediction per each cluster subset and model pair
+- Combine predictions from various models into an ensemble
+- Combine ensemble predictions for each cluster into a single prediction set
+- Generate a submission file for Kaggle
+
 Cross-validation has been performed in a separate loop, using the set of specific cross-validation scripts developed for every type of modelling algorithms tried. If cross-validation displayed good enough individual accuracy for a particular model, it was qualified to enter a submission ensemble.
 The final submission was generated via weighted ensemble technique. In this setup, predictions from better performing models (xgboost, svm linear, and RF) got higher weights, and less-performing models (adaboost, nnet) got lower weights.
 
 # Statistics of prediction accuracy
 Below is track of classification accuracy of different submissions completed in the course of the competition
-1. Data pre-processing, feature engineering and Straight-forward application of the modeling algorithms scored at 0.51-0.525 on the public leader board
-2. Introducing “cluster-then-predict” technique raised prediction scores to 0.52-0.532 along
-3. Adding SMOTE transformation further raised performance of individual prediction models to 0.572-0.602
-4. Various ensembles with equal weights of different model predictions boosted the submission score to 0.615-0.635
+- Data pre-processing, feature engineering and Straight-forward application of the modeling algorithms scored at 0.51-0.525 on the public leader board
+= Introducing “cluster-then-predict” technique raised prediction scores to 0.52-0.532 along
+- Adding SMOTE transformation further raised performance of individual prediction models to 0.572-0.602
+- Various ensembles with equal weights of different model predictions boosted the submission score to 0.615-0.635
 
 # Files in this Notebook
 - Example of equal-weight ensemble submission: loan_repay_ensemble_clustered_submission6.r
