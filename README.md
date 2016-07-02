@@ -36,12 +36,12 @@ The best prediction results have been achieved with clustering by Age Groups. Su
 
 # Model Training and Cross-Validation
 In course of tackling the challenge, the following models have been trained to do binary classification
-1. Xgboost (via caret interface)
-2. GBM (via caret interface)
-3. SVM with linear kernel (btw, this is one of the standard algorithms of choice of professional credit risk analysts engaged with real-world investment and retail banking)
-4. Random Forests (using the implementation in randomForest library)
-5. Adaboost classification (using capabilities of adabag library)
-6. Old-generation neural netwok algorithm (using nnet library)
+- Xgboost (via caret interface)
+- GBM (via caret interface)
+- SVM with linear kernel (btw, this is one of the standard algorithms of choice of professional credit risk analysts engaged with real-world investment and retail banking)
+- Random Forests (using the implementation in randomForest library)
+- Adaboost classification (using capabilities of adabag library)
+- Old-generation neural netwok algorithm (using nnet library)
 
 Predictions from those models were then used in ensembles to achieve better prediction accuracy.
 Xgboost demonstrated the best individual performance on 5-fold cross-validation. The second best runners (with almost equal individual prediction accuracy) were SVM and GBM, with RF being a little worse than those two models. Adaboost and nnet were less accurate yet still not bad to play in the ensembles.
